@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Universal vertical center with CSS</title>
+	<style type="text/css">
+
+    html, body { width:100%; height:100%; border:0; margin:0; }
+
+		section#outer {height: 100%;min-height:600px; overflow: hidden; position: relative; width: 100%;}
+		section#outer[id] {display: table; position: static;}
+		
+		#middle {position: absolute; top: 50%; width: 100%; text-align: center;} /* for explorer only*/
+		#middle[id] {display: table-cell; vertical-align: middle; position: static;}
+		
+		#inner {position: relative; top: -50%; text-align: left;} /* for explorer only */
+		#inner {width: 200px; margin-left: auto; margin-right: auto;} /* for all browsers*/
+
+	</style>
+</head>
+
+  <body>
+    <section id="outer">
+      <div id="middle">
+        <div id="inner">
+          [Placeholder]
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+

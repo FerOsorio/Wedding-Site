@@ -1,0 +1,11 @@
+<div class="container">
+	<nav>
+		<ul>
+			<% for (var i=0; i < items.length ; i++){ %>
+				<li class="menuItem">
+				<a class="menuItem" href="#<%= items[i].name %>"><%= items[i].displayName %></a>
+				</li>
+			<% } %>
+		</ul>
+	</nav>
+</div>

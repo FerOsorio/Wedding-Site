@@ -1,0 +1,11 @@
+{	
+	"items":[
+		{"name": "welcome",	"displayName" : "Bienvenido"},
+		{"name": "rsvp","displayName" : "Reserva"},
+		{"name": "location","displayName" : "D&oacute;nde/Cu&aacute;ndo"},
+		{"name": "scout","displayName" : "Cuernavaca"},
+		{"name": "party","displayName" : "Fiesta"},
+		{"name":"accomodation", "displayName":"Hospedaje"},
+		{"name":"gallery", "displayName":"Galer&iacute;a","template":"frames/gallery.ejs"}
+	]	
+}

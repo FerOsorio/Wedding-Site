@@ -1,0 +1,146 @@
+{"hotels":[
+	{
+		"name":"Hotel Camino Real Sumiya",
+		"address":"Int. Fraccionamiento Sumiya S/N Col. Jos&eacute; Parres Jiutepec, Morelos. 62564",
+		"link":"http://www.caminoreal.com/",
+		"rating":5,
+		"price":"$2,100.00MN",
+		"distance":"1.8 km, 3 mins",
+		"notes":"Dar nuestros nombres para la tarifa especial. (Sarah Jackson & Fernando Osorio)"				
+	},
+	{
+		"name":"MHJ Motel y Hotel",
+		"address":"Insurgentes No 4 Jiutepec, Morelos.",
+		"link":"http://www.hotelhaciendajiutepec.com/serv_motel.htm",
+		"rating":2,
+		"price":"$500 a $800 MN",
+		"distance":"3.8 km, 8 mins",
+		"notes":""				
+	},
+	{
+		"name":"Hotel Jiutepec",
+		"address":"Calle Dr. Jos&eacute; G. Parres No. 10 Jiutepec, Morelos",
+		"link":"http://hoteljiutepec.com/",
+		"rating":2,
+		"price":" $350 a $600 MN",
+		"distance":"3.2 km 6 minutos",
+		"notes":""				
+	},	
+	{
+		"name":"Hotel Galeon",
+		"address":"Carret. Federal Cuernavaca Cuautla Km 12, San Francisco, 62550 Jiutepec, Morelos, M&eacute;xico",
+		"link":"",
+		"rating":2,
+		"price":"$500 a $1,000 MN",
+		"distance":"7.0 km, 11 mins",
+		"notes":""				
+	},	
+	{
+		"name":"Mision del Sol Resort & Spa",
+		"address":"Avenida General Diego D&iacute;az Gonz&aacute;lez 31 Colonia Parres, 62550 Cuernavaca",
+		"link":"http://www.misiondelsol.com.mx/",
+		"rating":5,
+		"price":"$2,500 MN",
+		"distance":"600 m, 2 mins",
+		"notes":""				
+	},	
+	{
+		"name":"Hotel Hacienda de Cortes",
+		"address":"Plaza Kennedy 90, Col. Atlacomulco Jiutepec, Morelos 62560, M&eacute;xico.",
+		"link":"http://www.hotelhaciendadecortes.com.mx/",
+		"rating":5,
+		"price":"$1,500 MN",
+		"distance":"2.5 km, 4 mins",
+		"notes":""				
+	},	
+	{
+		"name":"Hotel Villa del Conquistador",
+		"address":"Paseo del Conquistador 134, 62240 Cuernavaca, Morelos, Mexico",
+		"link":"http://www.conquistador.com.mx/",
+		"rating":4,
+		"price":"  MN",
+		"distance":"15.1 km, 15 mins",
+		"notes":""				
+	},	
+	{
+		"name":"GS Cuernavaca",
+		"address":"Carretera Mexico Cuernavaca Km 71.5 No 17, 62130 Cuernavaca",
+		"link":"http://www.gshoteles.com.mx/gs_cuernavaca.php",
+		"rating":4,
+		"price":"900 MN",
+		"distance":"5.6 km, 11 mins",
+		"notes":""				
+	},	
+	{
+		"name":"Hotel Ilebal",
+		"address":"Chulavista 112, 62000 Cuernavaca",
+		"link":"http://www.hotelilebal.com.mx/",
+		"rating":4,
+		"price":"$1,000 MN",
+		"distance":"12.9 km, 16 mins",
+		"notes":""				
+	},	
+	{
+		"name":"Hotel Orense Express",
+		"address":"Chulavista 7, 62000 Cuernavaca",
+		"link":"http://www.hotelorenseexpress.com/",
+		"rating":4,
+		"price":"$1,050 MN",
+		"distance":"",
+		"notes":""				
+	},	
+	{
+		"name":"Quinta del Gobernador",
+		"address":"Gobernador de Jalisco 11, 62350 Cuernavaca",
+		"link":"http://www.quintadelgobernador.com.mx/",
+		"rating":3,
+		"price":"$1,350 MN",
+		"distance":"6.1km, 12 min",
+		"notes":""				
+	},	
+	{
+		"name":"Hotel Canarios",
+		"address":"Avenida Morelos 369, 62000 Cuernavaca",
+		"link":"http://www.hotelcanarios.com.mx/",
+		"rating":4,
+		"price":"$1,500 MN",
+		"distance":"8.4 km, 15 mins",
+		"notes":""				
+	},	
+	{
+		"name":"Fiesta Inn Cuernavaca",
+		"address":"Carretera Mexico - Acapulco km. 88 sin numero, Colonia Delicias, 62330 Cuernavaca",
+		"link":"http://www.fiestainn.com/en/mx-cuernavaca/hotel-cuernavaca",
+		"rating":4,
+		"price":"$1,500 MN",
+		"distance":"7.1 km, 10 mins",
+		"notes":""				
+	},	
+	{
+		"name":"Holiday Inn Cuernavaca",
+		"address":"Boulevard Diaz Ordaz, 86, 62440 Cuernavaca",
+		"link":"http://www.holidayinn.com/hotels/us/en/reservation",
+		"rating":3,
+		"price":"$1,700 MN",
+		"distance":"5.2km, 10 min",
+		"notes":""				
+	},	
+	{
+		"name":"Barcelo Cuernavaca Ejecutivo",
+		"address":"Coronel Ahumanda 203, Colonia Lomas del Mirador, 62450 Cuernavaca",
+		"link":"http://www.barcelo.com/BarceloHotels/en_GB/home-barcelo-hoteles.aspx",
+		"rating":4,
+		"price":"$2,300 MN",
+		"distance":"5.3km, 10min",
+		"notes":""				
+	},	
+	{
+		"name":"Hotel Boutique La Casa Azul",
+		"address":"Arista N. 17, Col Centro, 62000 Cuernavaca",
+		"link":"http://www.hotelcasaazul.com.mx/",
+		"rating":5,
+		"price":"$2,700 MN",
+		"distance":"7.9km, 15min",
+		"notes":""				
+	}
+]}
