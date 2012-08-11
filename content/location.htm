@@ -1,28 +1,53 @@
- <html>
- 	<head>
- 		<META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
- 		<META HTTP-EQUIV="Expires" CONTENT="-1">
- 	</head>
- 	<body>
-	 	<div class="row-fluid">
-		   <div class="span6">
-		     <h2>Jard&iacute;n Ramayana</h2>
-		     <a href="http://www.jardinramayana.com/" target="_blank">http://www.jardinramayana.com/</a>
-		     <p>Calle del trabajo s/n, esquina con Alta Tensi&oacute;n, Col. Parres Jiutepec, Morelos</p>
-		   </div>
-		   <div class="span6 right">
-		     <img src="./assets/img/when-es.png"/>
-		   </div>
-		 </div>
-	 	 <br/>
-		 <div class="map-container center">
-		   <div id="map_canvas" style="width: 635px; height: 300px"></div>
-		 </div>
-		 	
-		 <p><a href="http://goo.gl/maps/65DU" target="_blank">Ver mapa completo</a></p>
-		
-		 <script type="text/javascript">
-		 window.wedding.loadMap("map_canvas");
-		 </script>
- 	</body>
- </html>
+
+<html>
+<head>
+<META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+</head>
+<body>
+	<div class="row-fluid">
+
+		<div class="span4">
+			<section>
+				<div class="pin"></div>
+				<h2>Ceremonia Religiosa</h2>
+				<div>
+					${NombreIglesia}<br /> ${DireccionIglesia}
+				</div>
+				<p>Los esperamos en la Iglesia a las 12:00pm para celebrar
+					nuestra uni&oacute;n ante Dios.</p>
+			</section>
+			<section>
+				<div class="pin"></div>
+				<h2>Jard&iacute;n Ramayana</h2>
+				<a href="http://www.jardinramayana.com/" target="_blank">http://www.jardinramayana.com/</a>
+				<p>Calle del trabajo s/n, esquina con Alta Tensi&oacute;n, Col.
+					Parres Jiutepec, Morelos</p>
+				<p>
+					Guayabera - Formal
+				</p>
+			</section>
+			<br/><br/><br/><br/><br/><br/><br/>
+			<div class="when">
+				<div class="title">
+					Fecha
+				</div>
+				<div class="date">
+					6 de Abril, 2013
+				</div>
+			</div>
+		</div>
+		<div class="span4">
+			<div id="map_canvas"></div>
+			<p>
+				<a href="http://binged.it/NxJwcG" target="_blank">Ver mapa
+					completo</a>
+			</p>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		window.wedding.loadMap("map_canvas");
+	</script>
+</body>
+</html>

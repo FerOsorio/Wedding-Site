@@ -30,36 +30,30 @@ $(document).ready(function(){
 			var menu = new EJS({url: './template/menu.ejs'}).render(data);
 			//Render menu in page
 			$("#pageMenu").append(menu);
-			that.setMenuBehavior();			
+					
 			
 			completeCallback(that.menuItems);
 			
-//			$(window).scroll(function(){
-//				//Fix menu
-//				var offset = $(document).scrollTop()+"px";				
-//				$("#pageMenu").animate(
-//						{top:offset},
-//						{duration:500,queue:false},
-//						function(){
-//							//animation complete
-//							alert("Worales...");
-//						}); 
-//			});
 		});					
 	};
 	
 	Wedding.loadMap = function(canvas){
 		Utils.log("begin wedding.loadmap");
+        
+		var ramayana = new Microsoft.Maps.Location(18.888,-99.196522);
+		var church =  new Microsoft.Maps.Location(18.885,-99.196522);
 		
-        var ramayana = new google.maps.LatLng(18.888183,-99.196522);
-        var myOptions = {
-          zoom: 17,
-          center: ramayana,
-          scrollwheel: !1,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-
-        new google.maps.Map(document.getElementById(canvas), myOptions);
+        var map = new Microsoft.Maps.Map(document.getElementById(canvas), 
+                {credentials: "AnSepjvY36zVBp3Lcq4MmaaDSOqKjOWcnN2mopsHS1QVDOthjOIRMMZb-A_sUwap",
+                 center: ramayana,
+                 mapTypeId: Microsoft.Maps.MapTypeId.road,
+                 zoom: 15});
+        
+        var pinParty = new Microsoft.Maps.Pushpin(ramayana, {text: '1'});
+        var pinChurch =  new Microsoft.Maps.Pushpin(church, {text: '2'});
+        
+        map.entities.push(pinParty);
+        map.entities.push(pinChurch);
         
         Utils.log("end wedding.loadmap");
 	};
@@ -73,9 +67,16 @@ $(document).ready(function(){
 	};
 	
 	Wedding.setMenuBehavior = function(){
+		//remove all the current binds
+		
+		
 		var that = this;
-		var menus = $('a.menuItem'); 
-		menus.click(function(e){
+		var menus = $('a.menuItem');
+		
+		//remove all the current binds
+		menus.unbind('click');
+		
+		menus.bind('click', function(e){
 			e.preventDefault();			
 			that.loadPage(this.href.split('#')[1]);
 		});
@@ -90,15 +91,17 @@ $(document).ready(function(){
 	 *    
 	 * */
 	Wedding.loadPage = function(page){		
-		Utils.log("begin wedding.loadPage " + page);	
+		Utils.log("begin wedding.loadPage " + page);			
 		
 		if(typeof(this.pageStack[page]) === 'undefined'){
 			Utils.log('page ' + page + ' does not exist, creating a new page stack...');
 			
+			var that = this;
 			var pageElement = Utils.getMenuItemByName(page);
+			
 			this.pageStack[page] = this.createContent(pageElement); 
 			//Appends the page frame to the body of the page
-			$('.page-container').append(this.pageStack[page]);	
+			$('.page-container').append(this.pageStack[page]);
 			var currentPage = $('.content-' + page);
 			var pageString = './content/' + page + ".htm?seed=" + Math.random();
 			Utils.log("Loading page content from :" + pageString);
@@ -107,6 +110,8 @@ $(document).ready(function(){
 					Utils.log('Oops...');
 					currentPage.load('./content/error.htm');
 				}
+				//If the request was successful rebing the links
+				that.setMenuBehavior();	
 			});
 			Utils.log('new page stack created');				
 		}else{
@@ -116,15 +121,16 @@ $(document).ready(function(){
 		//http://css-tricks.com/examples/AnythingSlider/#panel1-6
 		//window.location = '#' + page;
 		Utils.log("scrolling to element");
-		$('html,body').animate({ scrollTop: $("#" + page).offset().top }, 
+		Utils.log("enabling temporal scrolling");
+		
+		$('html,body').animate(
 				{ 
-					duration: '450', easing: 'swing'
-				},
-				function(){
-					//animation complete
-					$('html,body').css("overflow","hidden");
+					scrollTop: $("#" + page).offset().top
+				}, 
+				{ 
+					duration: '450', easing: 'swing'				
 				});
-				
+		
 		Utils.log("end wedding.loadPage");
 	};
 	
@@ -174,7 +180,7 @@ $(document).ready(function(){
 			if(wedding.menuItems[i].name == name)
 				return wedding.menuItems[i];
 		}
-		return {"name":"Blank","displayName":"Blank"};
+		return {"name":"Blank" + Math.random(),"displayName":"Blank_" + name};
 	};
 	
 	Utils.renderTemplate = function(templateName, data){

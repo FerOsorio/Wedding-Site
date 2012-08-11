@@ -3,11 +3,18 @@
 <section id="outer">
   <div id="middle">
   	<div class="sectionHeader center">
-  		<div class="left"><%= content.contentTitle || content.displayName %></div>
+  		<div class="left">
+  			<span>
+  				<a href="javascript:window.wedding.loadPage('scout');">Cuernavaca</a> 
+  				:
+  				<%= content.contentTitle || content.displayName %>
+  			</span>
+  			
+  		</div>
   	</div>
     <div id="inner">  
       <div id="frame">
-        <div class="content-<%= content.name %> content">
+        <div class="content-<%= content.name %> content">        
         </div>
       </div>       
     </div>

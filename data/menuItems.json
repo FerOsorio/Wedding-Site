@@ -1,11 +1,16 @@
 {	
 	"items":[
-		{"name": "welcome",	"displayName" : "Bienvenido"},
-		{"name": "rsvp","displayName" : "Reserva"},
-		{"name": "location","displayName" : "D&oacute;nde/Cu&aacute;ndo"},
-		{"name": "scout","displayName" : "Cuernavaca"},
-		{"name": "party","displayName" : "Fiesta"},
-		{"name":"accomodation", "displayName":"Hospedaje"},
-		{"name":"gallery", "displayName":"Galer&iacute;a","template":"frames/gallery.ejs"}
+		{"display":true,"name": "welcome",	"displayName" : "Bienvenido", "contentTitle":"Familia &amp; Amigos:"},
+		{"display":true,"name": "rsvp","displayName" : "Reserva"},
+		{"display":true,"name": "location","displayName" : "D&oacute;nde/Cu&aacute;ndo"},
+		{"display":true,"name": "scout","displayName" : "Cuernavaca"},
+		{"display":false,"name": "travel","displayName" : "C&oacute;mo llegar","template":"frames/cuernavaca.ejs"},
+		{"display":false,"name": "travel_bybus","displayName" : "V&iacute;a Autobus","template":"frames/cuernavaca.ejs"},
+		{"display":false,"name": "scout_party","displayName" : "Fiesta y Revent&oacute;n","template":"frames/cuernavaca.ejs"},
+		{"display":false,"name":"accomodation", "displayName":"Hospedaje","template":"frames/cuernavaca.ejs"},
+		{"display":true,"name":"gallery", "displayName":"Galer&iacute;a","template":"frames/gallery.ejs"},
+    {"display":false,"name":"scout_info", "displayName":"Informaci&oacute;n","template":"frames/cuernavaca.ejs"},
+    {"display":false,"name":"scout_eco", "displayName":"Ecoturismo","template":"frames/cuernavaca.ejs"},
+    {"display":false,"name":"scout_about", "displayName":"Acerca de Cuerna","template":"frames/cuernavaca.ejs"} 
 	]	
 }

@@ -1,2 +1,172 @@
-<label for="name">Nombre</label>
-<input type="text" name="name"></input>
+<div id="rsvp-input" class="center control-group"
+	style="padding-top: 120px;">
+	<h2>Ingresa tu clave de confirmaci&oacute;n</h2>
+	<br /> <input class="control-group error" id="cve_rsvp" type="text"
+		name="name" pattern="[0-9]{5}"
+		style="font-size: 40px; width: 250px; height: 40px; text-align: center;"
+		maxlength="5"></input> <br /> <br />
+	<div>
+		Encuentra tu clave de confirmaci&oacute;n en la invitaci&oacute;n que
+		te enviamos, si no la encuentras mandanos un email a esta
+		direcci&oacute;n. <a
+			href="mailto:rsvp@sarahyfer.com?subject=Clave de reservaci&oacute;n&body=Hola novios, necesito ayuda con mi clave de reservaci&oacute;n.">rsvp@sarahyfer.com</a>
+	</div>
+</div>
+
+
+<div id="rsvp-members" style="display: none">
+	<h2>
+		<span data-bind="text: prefix">${prefix}</span>, <span
+			data-bind="text: familyName">${familyName}</span>
+	</h2>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span7">
+				<div>Es un honor para nosotros el poder contar contigo en
+					nuestra boda, porfavor selecciona los miembros de tu familia que
+					asistir&aacute;n:</div>
+				<br />
+				<ul data-bind="foreach: member"
+					style="padding: 0; margin: 0; border: 0">
+					<li style="list-style: none;">
+						<table>
+							<tr>
+								<td><input type="checkbox" name="member" id="${memberId}"
+									data-bind="checked: attend, attr: {id: memberId}" /></td>
+								<td><label for="${memberId}" style="margin: 0"
+									data-bind="text: name, attr: {for: memberId}">${member.name}</label></td>
+							</tr>
+						</table>
+					</li>
+				</ul>
+				<br />
+				<fieldset class="form-horizontal">
+					<div class="control-group">
+						<label for="phone" class="control-label">Tel&eacute;fono
+							de contacto: </label>
+						<div class="controls">
+							<input id="phone" type="text" class="input-medium"
+								placeholder="044 55 555 555" data-bind="value: phone" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label for="email" class="control-label">Email de
+							contacto: </label>
+						<div class="controls">
+							<input id="email" type="text" class="input-medium"
+								placeholder="ejemplo@hotmail.com" data-bind="value: email" />
+						</div>
+					</div>
+				</fieldset>
+				<br /> <input type="button" class="btn btn-primary"
+					value="Confirmar asistencia" data-bind="click: confirm" /> <input
+					type="button" class="btn btn-danger"
+					value="No asistiremos al evento" data-bind="click: notAttend" />
+			</div>
+			<div class="span5 center">
+				<div class="alert alert-block">
+					<h4 class="alert-heading">Importante</h4>
+					En caso de requerir un boleto adicional, cont&aacute;ctanos lo
+					antes posible para checar disponibilidad. Los boletos est&aacute;n
+					limitados y por lo mismo no podemos asegurarte el lugar extra.
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<section id="rsvp-confirmation" class="center" style="display:none">
+	<h1>Gracias por tu confirmaci&oacute;n</h1>
+	Puedes hacer modificaciones a tu reservaci&oacute;n dando click <a
+		href="./?rsvp=${rsvpNo}#rsvp">aqui</a>.
+</section>
+
+<script>
+	var ctrl = $('#cve_rsvp');
+	var requested = false;
+	ctrl.keyup(function(e) {
+		if (!(e.keyCode >= 48 && e.keyCode <= 57)) {
+			console.log('invalid keycode');
+			return;
+		}
+
+		console.log('cve keydown')
+		console.log(e);
+		if (requested === false) {
+			console.log('requested = false')
+			if (ctrl.val().length == 5) {
+				console.log('sending request to the server')
+				//Send the request to the server
+				requested = true;
+				$('#rsvp-container').addClass('success');
+				console.log('css class added')
+
+				loadReservation(ctrl.val());
+
+				//Wait 1 second to send another request
+				setTimeout(function() {
+					requested = false;
+					console.log('request released.')
+				}, 1000)
+
+			} else {
+				console.log('length incomplete')
+				$('#rsvp-container').removeClass('success');
+				$('#rsvp-container').removeClass('error');
+			}
+		} else {
+			console.log('Wait 1 second to send request');
+
+		}
+	})
+
+	ctrl.focus();
+	
+	this.data = {};
+
+	var loadReservation = function(rsvpNo) {
+		console.log('Reservation: ' + rsvpNo);
+		//Get data from server
+
+		var rsvp = {
+			prefix : 'Familia',
+			familyName : 'Osorio Cede\u00f1o',
+			phone : ko.observable('044 55 5435 8039'),
+			email : ko.observable('mcedeno49@gmail.com'),
+			member : [ {
+				memberId : 1,
+				attend : ko.observable(false),
+				name : 'Fernando Osorio Rubio'
+			}, {
+				memberId : 2,
+				attend : ko.observable(false),
+				name : 'Rosa Martha Cede\u00f1o Chaire'
+			}, {
+				memberId : 3,
+				attend : ko.observable(false),
+				name : 'Accompa\u00f1ante (Opcional)'
+			} ],
+			confirm : function() {
+				//Send data to server (jsonfy)
+				//Validate server response
+				
+				//if valid, display confirmation section 
+				$('#rsvp-members').fadeOut(function(){
+					$('#rsvp-confirmation').fadeIn();
+				})
+				//if not valid, display exception section or retry?
+			},
+			notAttend : function(){
+					
+			}
+		}
+		this.data = rsvp;
+		//Remove input screen
+		$('#rsvp-input').fadeOut(function() {
+			$('#rsvp-members').fadeIn();
+		});
+
+		//Bind data
+		ko.applyBindings(rsvp);
+	}
+</script>

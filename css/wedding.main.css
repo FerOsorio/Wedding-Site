@@ -1,110 +1,143 @@
-html, body { width:100%; height:100%; border:0; margin:0;  }
+html,body {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	margin: 0;
+}
+
+a,a:hover,a:visited { /*color:#663333;*/
+	color: #CC0066;
+}
+
+h2 {
+	font-size: 20px;
+}
 
 #background {
-  min-height: 950px;
-  -moz-user-select: none;
-  overflow: hidden;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: auto;
-  z-index: -1;
+	min-height: 950px;
+	-moz-user-select: none;
+	overflow: hidden;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: auto;
+	z-index: -1;
 }
 
 #background .stretch-image {
-  background: url("../assets/img/bg/3.jpg") no-repeat fixed;
-  left: 0;
-  min-width: 1024px;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-size: 100% auto;
-  -moz-background-size: 100% auto;
-  -webkit-background-size: 100% auto;
-  z-index: -2;
-
+	background: url("../assets/img/bg/3.jpg") no-repeat fixed;
+	left: 0;
+	min-width: 1024px;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-size: 100% auto;
+	-moz-background-size: 100% auto;
+	-webkit-background-size: 100% auto;
+	z-index: -2;
 }
 
 .page-container {
-  width:100%;
-  height:100%;
-  border:0px;
-  margin:0px;
-  /*overflow:hidden;*/
+	width: 100%;
+	height: 100%;
+	border: 0px;
+	margin: 0px;
+	/*overflow:hidden;*/
 }
 
+section#outer {
+	height: 100%;
+	min-height: 600px;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
 
-section#outer {height: 100%;min-height:600px; overflow: hidden; position: relative; width: 100%;}
-section#outer[id] {display: table; position: static;}
+section#outer[id] {
+	display: table;
+	position: static;
+}
 
-#middle {position: absolute; top: 50%; width: 100%; text-align: center;} /* for explorer only*/
-#middle[id] {display: table-cell; vertical-align: middle; position: static;}
+#middle {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	text-align: center;
+} /* for explorer only*/
+#middle[id] {
+	display: table-cell;
+	vertical-align: middle;
+	position: static;
+}
 
-#inner {position: relative; top: -50%; text-align: left;} /* for explorer only */
 #inner {
-  margin-left: auto; margin-right: auto;
-  padding-top:10px;
-  width: 900px;
-  height:530px;
-  background: url("../assets/img/white-30.png") repeat;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
-  text-shadow: 1px 1px 0px white;
+	position: relative;
+	top: -50%;
+	text-align: left;
+} /* for explorer only */
+#inner {
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 10px;
+	width: 900px;
+	height: 530px;
+	background: url("../assets/img/white-30.png") repeat;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	
 }
 
 #frame {
-  width: 880px;
-  height:520px;
-  margin: 0 auto 0px auto;
-  background: url("../assets/img/white-texture.png") repeat;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  border-radius: 15px;
-  text-shadow: 1px 1px 0px white;
-  overflow:auto;
+	width: 880px;
+	height: 520px;
+	margin: 0 auto 0px auto;
+	background: url("../assets/img/white-texture.png") repeat;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	
+	overflow: auto;
 }
 
 .map-container {
-  
+	
 }
 
-h2, h3 {
-  font-family: 'Fjord One', cambria, georgia, serif;
-  padding:0px;
-  margin:0px;
+h2,h3 {
+	font-family: 'Fjord One', cambria, georgia, serif;
+	padding: 0px;
+	margin: 0px;
 }
-  
 
-.center * {
-  text-align:center;
-  vertical-align:middle;
-  margin-left:auto;
-  margin-right:auto;
+.center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .sectionHeader {
-	padding-bottom:25px;
-	color:white;
-	width:950px;		
-	font-size:55px;	
-	text-decoration:none;
-	font-weight:bold;
+	padding-bottom: 25px;
+	color: white;
+	width: 950px;
+	font-size: 55px;
+	text-decoration: none;
+	font-weight: bold;
 	font-family: Poiret One, Arial, serif;
 }
 
 #pageMenu {
-	position:absolute;
-	width:100%;
+	position: absolute;
+	width: 100%;
 	height: 125px;
 	background: url("/assets/img/bgtopbar.png") repeat-x;
 	position: fixed;
 	z-index: 2;
 }
 
-#pageMenu  .container{
+#pageMenu  .container {
 	width: 960px;
 	margin: 0 auto;
 	display: block;
@@ -112,62 +145,221 @@ h2, h3 {
 }
 
 #pageMenu  ul {
-	width:100%;
-	border:0px;
-	margin:0px;
-	padding:0px;
+	width: 100%;
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
 }
 
-#pageMenu  ul  li{
-	list-style:none;
-	margin:2px;
-	padding:0 10px 5px 10px;	
-	z-index:1000;
-	display:inline;
+#pageMenu  ul  li {
+	list-style: none;
+	margin: 2px;
+	padding: 0 10px 5px 10px;
+	z-index: 1000;
+	display: inline;
 }
+
 li.menuItem  a {
-	font-family:'Poiret One';
-	color:white;
-	font-size:25px;
+	font-family: 'Poiret One';
+	color: white;
+	font-size: 25px;
 }
 
-li.menuItem > a:hover{
-	color:#CC0066;
-	text-decoration:none;
+li.menuItem>a:hover {
+	color: #CC0066;
+	text-decoration: none;
 	text-shadow: 1px 1px 0px #8E0047;
 }
 
 .center {
-	text-align:center;
-	margin-left:auto;
-	margin-right:auto;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .justify {
-	text-align:justify;
+	text-align: justify;
 }
 
 .left {
-	text-align:left;
+	text-align: left;
 }
 
 .right {
-	text-align:right;
-	margin-right:0
+	text-align: right;
+	margin-right: 0
 }
 
 .content {
-	padding:30px;
+	padding: 30px;
 }
 
 .gallery-clipout {
-	position:relative;
-	width:100%;
-	height:100%;
-	top:-10;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	top: -10;
 }
 
 .gallery-clipin {
-	position:absolute;
-	clip:rect(0px, 850px, 470px, 0px)
+	position: absolute;
+	clip: rect(0px, 850px, 470px, 0px)
+}
+
+/*
+ Begin: Hotel list styles
+*/
+div#hotelList {
+	
+}
+
+div.hotelHeader {
+	font-size: 20px;
+}
+
+div#hotelList>ul {
+	list-style: none;
+	border: 0px;
+	margin: 0px;
+}
+
+div#hotelList>ul>li {
+	float: left;
+	margin-bottom: 15px;
+	width: 400px;
+	height: 120px;
+}
+/*
+ End: Hotel list styles
+*/
+
+/*Begin: Utils*/
+.clear {
+	clear: both;
+}
+/*End: Utils*/
+#map_canvas {
+	position: relative;
+	width: 550px;
+	height: 430px;
+}
+
+div.pin {
+	background:
+		url('http://ecn.dev.virtualearth.net/mapcontrol/v7.0/i/poi_search.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	width: 20px;
+	height: 24px;
+	float: left;
+}
+
+/**
+ * Scout page elements
+ * */
+ul.scout {
+	width: 100%;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.scout li {
+	padding: 3px;
+	list-style: none;
+	width: 255px;
+	height: 200px;
+	float: left;
+	display: block;
+	margin: 5px;
+	background-color:#C06;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	padding-top:20px;
+}
+
+ul.scout li a {
+	width: 300px;
+	overflow: hidden;
+	font-size:20px;
+	color:white;
+	text-shadow:none;
+}
+
+.icon110x110 {
+	width: 110px;
+	height: 110px;
+	position: relative;
+	overflow: hidden;
+}
+
+.icon110x110 img {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	width: 330px;
+	height: 220px;
+	max-width: 330px;
+}
+
+.scout_accomodation {
+	left: -110px;
+	top: 0px;
+}
+
+.scout_transportation {
+	left: 0px;
+	top: 0px;
+}
+
+.scout_ecotourism {
+	left: -220px;
+	top: 0px;
+}
+
+.scout_party {
+	left: 0px;
+	top: -110px;
+}
+
+.scout_info {
+	left: -110px;
+	top: -110px;
+}
+
+/* When section elements*/
+
+.when {
+	width:260px;
+	height:70px;
+	-webkit-border-radius-topleft: 10px;
+	-moz-border-radius-topleft: 10px;
+	border-top-left-radius: 10px;
+	
+	-webkit-border-radius-topright: 10px;
+	-moz-border-radius-topright: 10px;
+	border-top-right-radius: 10px;
+	
+	border:1px solid #C06;
+	background-color:#C06;
+}
+
+.when .title {	
+	width:100%;
+	text-align:center;
+	text-shadow:none;
+	font-size:18px;
+	color:white;
+	height:30px;
+	line-height:25px;
+}
+
+.when .date {
+	background-color:white;
+	font-size:25px;
+	height:40px;
+	text-align:center;
+	line-height:40px;
 }
